@@ -3,6 +3,10 @@ const crypto = require('crypto');
 
 // Create Account
 exports.createAccount = (req, res) => {
+    // Validate required fields
+    if (!email || !name) {
+        return res.status(400).json({ error: 'please provide valid credentials' });
+    }
     const { email, name, website } = req.body;
     const secret_token = crypto.randomBytes(16).toString('hex');
     db.run(`INSERT INTO accounts (email, name, secret_token, website) VALUES (?, ?, ?, ?)`,
