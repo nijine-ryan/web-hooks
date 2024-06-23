@@ -1,0 +1,9 @@
+/node_modules
+logs/
+app/ssl/
+ecosystem.config.js
+package-lock.json
+bitbucket-pipelines.yml
+appspec.yml
+app/config/keyfile.js
+.vscode
