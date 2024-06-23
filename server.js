@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use('/api', apiRoutes)
 
 app.get('/', (req, res) => {
-    res.send("Server is listening")
+    return res.send("Server is listening")
 })
 
 // Start the server
