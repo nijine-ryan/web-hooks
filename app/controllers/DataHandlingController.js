@@ -4,6 +4,7 @@ const axios = require('axios');
 exports.handleIncomingData = async (req, res) => {
     const { data } = req.body;
     const token = req.headers['cl-x-token'];
+
     if (!data) {
         return res.status(400).json({ error: 'Provide valid data' });
     }
@@ -45,4 +46,4 @@ db.get(`SELECT * FROM accounts WHERE secret_token = ?`, [token], (err, account) 
         }
     });
 });
-};
+
